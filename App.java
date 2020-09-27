@@ -3,42 +3,40 @@ package org.fatec;
 public class App {
 
 	public static void main(String[] args) {
-		Service services = new Service();
+
+		ServiceController services = new ServiceController();
 		
-		Controle controle = new Controle();
+		Admin admin = new Admin();
+		
+		ScannerController controle = new ScannerController();
 		
 		int escolha = 0;
 		
-		while (escolha != 5) {
-			Menu.MainEscolhas();
+		while (escolha != 3) {
+			Menu.Main();
+			
 			escolha = controle.opcao();
 			
 			if (escolha == 1) {
-				System.out.println("Digite o nome: ");
-				String nome = controle.texto();
+				int	escolhaCliente = 0;
+
+				services.Run();
+				Menu.Client();
 				
-				System.out.println("Digite o telefone: ");
-				String phone = controle.texto();
+				escolhaCliente = controle.opcao();
 				
-				System.out.println("Digite a data de nascimento: ");
-				String birth = controle.texto();
-				
-				System.out.println("Digite o genero: ");
-				String gender = controle.texto();
-				services.RegisterClients(nome, phone, birth, gender);
+				if (escolhaCliente == 1) {
+					services.listServices();
+					
+					System.out.println("Essa é a nossa lista de serviços\n");
+				}
 			}
 			
 			if (escolha == 2) {
-				services.readClients();
+				admin.Run();
 			}
 			
-			if (escolha == 3) {
-				String id = controle.texto();
-				
-				services.removeClient(id);
-			}
 		}
-		
 		
 		
 		

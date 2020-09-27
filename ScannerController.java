@@ -2,12 +2,10 @@ package org.fatec;
 
 import java.util.Scanner;
 
-public class Controle {
-	private Scanner leitor;
-	// é o input tipo do paitom
+public class ScannerController {
+	private Scanner leitor;	
 	
-	
-	public Controle() {
+	public ScannerController() {
 		leitor = new Scanner(System.in);
 	}
 
