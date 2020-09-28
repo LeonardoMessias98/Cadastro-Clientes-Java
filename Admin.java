@@ -1,8 +1,6 @@
 package org.fatec;
 
 public class Admin {
-
-	public Admin() {}
 	
 	public void Run() {
 		ClientContoller services = new ClientContoller();
@@ -16,18 +14,25 @@ public class Admin {
 			escolha = controle.opcao();
 			
 			if (escolha == 1) {
-				System.out.println("Digite o nome: ");
+				System.out.print("Digite o nome: ");
 				String nome = controle.texto();
 				
-				System.out.println("Digite o telefone: ");
+				System.out.print("Digite o telefone: ");
 				String phone = controle.texto();
 				
-				System.out.println("Digite a data de nascimento: ");
+				System.out.print("Digite a data de nascimento: ");
 				String birth = controle.texto();
 				
-				System.out.println("Digite o genero: ");
-				String gender = controle.texto();
+				System.out.print("Digite o genero (M/F): ");
+				String gender = controle.texto().toUpperCase();
+				while (!(gender.equals("M") || gender.equals("F"))) {
+					System.out.println("\nGênero deverá ser M ou F");
+					System.out.print("Digite o genero (M/F): ");
+					gender = controle.texto().toUpperCase();
+				}
+				
 				services.RegisterClients(nome, phone, birth, gender);
+				System.out.println("\nCliente cadastrado com sucesso!");
 			}
 			
 			if (escolha == 2) {
@@ -41,18 +46,18 @@ public class Admin {
 				}
 				
 				if (listingEscolha == 2) {
-					System.out.println("Deseja visualizar por genero ? (Y/N)");
+					System.out.println("Deseja visualizar por genero ? (S/N)");
 
-					String response = controle.texto();
+					String response = controle.texto().toUpperCase();
+					System.out.println(response);
 					
-					System.out.println("VOCE ESCOLHEU " + response);
-					if (response.equals("Y") || response.equals("y")) {
+					if (response.equals("S")) {
 						System.out.println("Escolha o genero (M/F)");
-						String gender = controle.texto();
+						String gender = controle.texto().toUpperCase();
 						
-						if (gender.equals("M") || gender.equals("m")) {
+						if (gender.equals("M")) {
 							services.sortByName(gender);
-						} else if (gender.equals("F") || gender.equals("f")) {
+						} else if (gender.equals("F")) {
 							services.sortByName(gender);
 						} else {
 							System.out.println("Essa escolha não é valida");
@@ -79,22 +84,23 @@ public class Admin {
 				System.out.println("Digite o ID do usuário que deseja atualizar");
 				String id = controle.texto();
 				
-				System.out.println("Digite o nome: ");
+				System.out.print("Digite o nome: ");
 				String nome = controle.texto();
 				
-				System.out.println("Digite o telefone: ");
+				System.out.print("Digite o telefone: ");
 				String phone = controle.texto();
 				
-				System.out.println("Digite a data de nascimento: ");
+				System.out.print("Digite a data de nascimento: ");
 				String birth = controle.texto();
 				
-				System.out.println("Digite o genero: ");
-				String gender = controle.texto();
+				System.out.print("Digite o genero: ");
+				String gender = controle.texto().toUpperCase();
+				while (!(gender.equals("M") || gender.equals("F"))) {
+					System.out.println(gender);
+				}
 				
 				services.updateClient(id, nome, phone, birth, gender);
 			}
 		}
-		
 	}
-
 }

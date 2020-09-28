@@ -67,7 +67,7 @@ public class ClientContoller {
 			   } 
 			}
 		
-		System.out.println("Cliente atualizado");
+		System.out.println("\nCliente atualizado com sucesso!");
 	}
 	
 	public void sortByName(String gender) {
