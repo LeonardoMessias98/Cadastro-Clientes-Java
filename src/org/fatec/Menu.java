@@ -1,34 +1,19 @@
 package org.fatec;
 
 public class Menu {
-
-	public static void Main() {
-		System.out.println("\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-		System.out.println("  Bem vindo ao World Beaut  ");
-		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-		System.out.println("1 - Sou cliente");
-		System.out.println("2 - Sou admnistrador");
-		System.out.println("3 - Sair");
-	}
 	
-	public static void Client() {
-		System.out.println("\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-		System.out.println("  Bem vindo ao World Beaut  ");
-		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-		System.out.println("1 - Ver a lista de serviços");
-		System.out.println("3- Sair");
-	}
 	
 	public static void Admin() {
 		System.out.println("\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-		System.out.println("  Painel do Administrador  ");
+		System.out.println("  Bem vindo ao World Beaut  ");
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 		System.out.println("1 - Cadastrar um cliente");
-		System.out.println("2 - Listar todos os clientes");
+		System.out.println("2 - Listar clientes");
 		System.out.println("3 - Remover um cliente");
 		System.out.println("4 - Editar um cliente");
 		System.out.println("6 - Ver relatórios");
 		System.out.println("8 - Sair");
+		System.out.println(" - Agendar serviço"); // Pegar um cliente e ligar com um serviço
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 	}
 	
@@ -38,6 +23,7 @@ public class Menu {
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 		System.out.println("1 - Ordenar por data de criação");
 		System.out.println("2 - Ordenar por ordem alfabética");
+		System.out.println(" - Visualizar um cliente"); // Listar um unico cliente com seus serviços
 		System.out.println("3 - Sair");
 	}
 	
