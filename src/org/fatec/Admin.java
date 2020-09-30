@@ -2,7 +2,7 @@ package org.fatec;
 
 public class Admin {
 	
-	public void Run() {
+	public void Run(int store) {
 		ClientContoller services = new ClientContoller();
 		
 		ScannerController controle = new ScannerController();
@@ -31,7 +31,7 @@ public class Admin {
 					gender = controle.texto().toUpperCase();
 				}
 				
-				services.RegisterClients(nome, phone, birth, gender);
+				services.RegisterClients(nome, phone, birth, gender, store);
 				System.out.println("\nCliente cadastrado com sucesso!");
 			}
 			
@@ -101,6 +101,7 @@ public class Admin {
 				
 				services.updateClient(id, nome, phone, birth, gender);
 			}
+		
 		}
 	}
 }

@@ -24,10 +24,10 @@ public class ClientContoller {
         return Code;
 	}
 	
-	public void RegisterClients(String name, String phone, String birthDay, String gender) {
+	public void RegisterClients(String name, String phone, String birthDay, String gender, int store ) {
 		Date date = new Date();
 		
-		this.clients.add(new Client(this.generateHexCode(), name, phone, birthDay, gender, date ));
+		this.clients.add(new Client(this.generateHexCode(), name, phone, birthDay, gender, date, store ));
 	}
 	
 	public void sortByDate() {
