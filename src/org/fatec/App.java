@@ -3,44 +3,33 @@ package org.fatec;
 public class App {
 
 	public static void main(String[] args) {
-
-//		ServiceController services = new ServiceController();
+		ScannerController controle = new ScannerController();
+		
+		int escolha = 0;
+		
+		
+		while (escolha == 0) {
+			
+				
+			System.out.println("\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+			System.out.println("  Bem vindo ao World Beauty  ");
+			System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+			System.out.println("  Escolha a loja  ");
+			System.out.println("1 - WB Principal");
+			System.out.println("2 - WB 1");
+			System.out.println("3 - WB 2");
+			System.out.println("8 - Sair");
+			System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+			
+		
+			escolha = controle.opcao();
+			
+					
+		}
 		
 		Admin admin = new Admin();
 		
-		admin.Run();
-		
-//		ScannerController controle = new ScannerController();
-//		
-//		int escolha = 0;
-//		
-//		while (escolha != 3) {
-//			Menu.Main();
-//			
-//			escolha = controle.opcao();
-//			
-//			if (escolha == 1) {
-//				int	escolhaCliente = 0;
-//
-//				services.Run();
-//				Menu.Client();
-//				
-//				escolhaCliente = controle.opcao();
-//				
-//				if (escolhaCliente == 1) {
-//					services.listServices();
-//					
-//					System.out.println("Essa é a nossa lista de serviços\n");
-//				}
-//			}
-//			
-//			if (escolha == 2) {
-//				admin.Run();
-//			}
-//			
-//		}
-//		
-		
+		admin.Run(escolha);
 		
 	}
 
