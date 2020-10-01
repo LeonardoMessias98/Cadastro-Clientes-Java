@@ -4,12 +4,12 @@ public class Admin {
 	
 	public void Run(int store) {
 		ClientContoller services = new ClientContoller();
-		
 		ScannerController controle = new ScannerController();
+		ServiceController service = new ServiceController();
+
+		int escolha = 8;
 		
-		int escolha = 0;
-		
-		while (escolha != 8) {
+		while (escolha != 0) {
 			Menu.Admin();
 			escolha = controle.opcao();
 			
@@ -64,14 +64,12 @@ public class Admin {
 						}
 					} else {
 						services.sortByName("0");
-					}
-					
+					}					
 				}
 				
 				if (listingEscolha == 3) {
 					escolha = 8;
-				}
-				
+				}		
 			}
 			
 			if (escolha == 3) {
@@ -100,8 +98,12 @@ public class Admin {
 				}
 				
 				services.updateClient(id, nome, phone, birth, gender);
-			}
-		
+			}	
+			
+			if (escolha == 5) {
+				service.Run();
+				service.listServices();
+			}	
 		}
 	}
 }

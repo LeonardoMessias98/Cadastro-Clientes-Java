@@ -11,6 +11,7 @@ public class Client {
 	Date create_at;
 	int store;
 	
+	
 	public Client( String id, String name, String phone, String birthDay, String gender, Date create_at, int store) {
 		this.name = name;
 		this.phone = phone;

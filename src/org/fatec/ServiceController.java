@@ -11,19 +11,19 @@ public class ServiceController {
 	}
 	
 	public void Run() {
-		this.services.add(new Services("Design de  sobrancelhas,", "F"));		
-		this.services.add(new Services("Manicure", "F"));
-		this.services.add(new Services("Pedicure", "F"));
-		this.services.add(new Services("Corte  e  pintura   de  cabelo", "F"));
-		this.services.add(new Services("Remoção de manchas na pele", "F"));
-		this.services.add(new Services("Aplicação de botox", "F"));
-		this.services.add(new Services("Tratamento para emagrecimento", "F"));
-		this.services.add(new Services("Redução de medidas", "F"));
+		this.services.add(new Services("[1] - Design de  sobrancelhas,", "F"));		
+		this.services.add(new Services("[2] - Manicure", "F"));
+		this.services.add(new Services("[3] - Pedicure", "F"));
+		this.services.add(new Services("[4] - Corte e pintura de cabelo", "F"));
+		this.services.add(new Services("[5] - Remoção de manchas na pele", "F"));
+		this.services.add(new Services("[6] - Aplicação de botox", "F"));
+		this.services.add(new Services("[7] - Tratamento para emagrecimento", "F"));
+		this.services.add(new Services("[8] - Redução de medidas", "F"));
 		
-		this.services.add(new Services("Corte de cabelo","M"));
-		this.services.add(new Services("Modelagem e corte de barba","M"));
-		this.services.add(new Services("Tratamento para quedas de cabelo","M"));
-		this.services.add(new Services("Produtos especializados","M"));		
+		this.services.add(new Services("[9] - Corte de cabelo","M"));
+		this.services.add(new Services("[10] - Modelagem e corte de barba","M"));
+		this.services.add(new Services("[11] - Tratamento para quedas de cabelo","M"));
+		this.services.add(new Services("[12] - Produtos especializados","M"));		
 	}
 	
 	public void listServices() {

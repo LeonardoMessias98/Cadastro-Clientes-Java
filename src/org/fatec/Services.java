@@ -11,7 +11,7 @@ public class Services {
 	
 	@Override
 	public String toString() {
-		String info = "Serviço: " + this.name + "\nQuem pode consumir: Genero " + toGender + "\n";
+		String info =  this.name;
 		return info;
 	}
 }	
