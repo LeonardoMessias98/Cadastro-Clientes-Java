@@ -21,3 +21,8 @@
   * Qual é o seriço mais procurado para um determinado gênero.
   
   Capacidade de persistência de dados. A agenda deverá ser salva em um arquivoem   disco   rígido,   como   acontece   com   a   maíoria   dos   softwares   existentes   emmercado.
+
+### Integrantes
+* <a href="https://github.com/EvandroRBR" target="blank">Evandro Braga</a>
+* <a href="https://github.com/raquelribeiro2" target="blank">Leonardo Messias</a>
+* <a href="https://github.com/LeonardoMessias98" target="blank">Raquel Ribeiro</a>
