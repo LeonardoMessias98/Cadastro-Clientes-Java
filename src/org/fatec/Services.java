@@ -2,11 +2,11 @@ package org.fatec;
 
 public class Services {
 	String name;
-	String toGender;
+	int id;
 	
-	public Services(String name, String gender) {
+	public Services(String name, int id) {
 		this.name = name;
-		this.toGender = gender;
+		this.id = id;
 	}
 	
 	@Override

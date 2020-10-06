@@ -12,6 +12,7 @@ public class Menu {
 		System.out.println("4 - Editar um cliente");
 		System.out.println("5 - Agendar serviço");
 		System.out.println("6 - Ver relatórios");
+		System.out.println("7 - Salvar arquivos");
 		System.out.println("0 - Voltar");
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 	}
@@ -34,6 +35,7 @@ public class Menu {
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 		System.out.println("1 - Idade média do publico");
 		System.out.println("2 - Serviços mais procurados");
+		System.out.println("3 - Serviços utilizados por cliente");
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 	}
 	

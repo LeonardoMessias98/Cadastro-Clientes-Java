@@ -1,9 +1,12 @@
 package org.fatec;
 
+import java.io.IOException;
+
 public class App {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		ScannerController controle = new ScannerController();
+		ServiceController service = new ServiceController();
 		
 		int escolha = 4;
 		
@@ -22,7 +25,8 @@ public class App {
 			
 			if (escolha != 0) {
 				Admin admin = new Admin();
-				admin.Run(escolha);		
+				service.Run();
+				admin.Run(escolha, service);	
 			}
 		}
 		

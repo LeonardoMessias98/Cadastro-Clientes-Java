@@ -1,11 +1,18 @@
 package org.fatec;
 
-public class Admin {
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Admin implements Serializable {
 	
-	public void Run(int store) {
+	public void Run(int store, ServiceController service) throws IOException{
 		ClientContoller services = new ClientContoller();
 		ScannerController controle = new ScannerController();
-		ServiceController service = new ServiceController();
+		
+		String caminho = "teste.ser" ;
 
 		int escolha = 8;
 		
@@ -56,14 +63,14 @@ public class Admin {
 						String gender = controle.texto().toUpperCase();
 						
 						if (gender.equals("M")) {
-							services.sortByName(gender);
+							services.sortByName(gender, false);
 						} else if (gender.equals("F")) {
-							services.sortByName(gender);
+							services.sortByName(gender, false);
 						} else {
 							System.out.println("Essa escolha não é valida");
 						}
 					} else {
-						services.sortByName("0");
+						services.sortByName("0", false);
 					}					
 				}
 				
@@ -101,9 +108,47 @@ public class Admin {
 			}	
 			
 			if (escolha == 5) {
-				service.Run();
 				service.listServices();
+				int servicoEscolhido = controle.opcao();
+				System.out.println("\n............................................");
+				System.out.println("Escolha o usuário pelo ID para consumir o serviço");
+				System.out.println("............................................\n");
+				services.sortByName("0", true);
+				
+				String userId = controle.texto();
+				services.insertServices(userId, servicoEscolhido, service);
+				
 			}	
+			
+			if (escolha == 6) {
+				Menu.Relatorios();
+				
+				int escolhaRelatorio = controle.opcao();
+				
+				if (escolhaRelatorio == 2) {
+					service.printMostUsed();
+				}
+				
+				if (escolhaRelatorio == 3) {
+					System.out.println("\n............................................");
+					System.out.println("Escolha o usuário pelo ID");
+					System.out.println("............................................\n");
+					services.sortByName("0", true);
+					
+					System.out.println("Digite o id do usuário");
+					String userId = controle.texto();
+					
+					services.listServices(userId, service);
+				}
+			}
+			
+			if (escolha == 7) {
+				FileOutputStream canal = new FileOutputStream(caminho);
+				ObjectOutputStream escritor = new ObjectOutputStream(canal);
+				escritor.writeObject(services.clients);
+				escritor.close();
+				System.out.println("Cadastros de clientes salvo com sucesso!");
+			}
 		}
 	}
 }

@@ -70,7 +70,33 @@ public class ClientContoller {
 		System.out.println("\nCliente atualizado com sucesso!");
 	}
 	
-	public void sortByName(String gender) {
+	public void insertServices(String id, int service, ServiceController servico ) {
+		Iterator<Client> client = clients.iterator();
+		
+		servico.insertInMostUsed(service);
+		
+		while (client.hasNext()){ 
+			   Client atual = client.next(); 
+			       if (atual.id.equals(id)) {
+			    	   atual.addService(service);
+			   } 
+			}
+		
+		System.out.println("\nProduto adicionado!");
+	}
+	
+	public void listServices(String id, ServiceController service) {
+		Iterator<Client> client = clients.iterator();
+		
+		while (client.hasNext()){ 
+			   Client atual = client.next(); 
+			       if (atual.id.equals(id)) {
+			    	   atual.listService(service);
+			   } 
+			}
+	}
+	
+	public void sortByName(String gender, boolean services) {
 		Collections.sort(clients, new Comparator<Client>(){ 
 			 @Override 
 			public int compare(Client client1, Client client2){ 
@@ -80,7 +106,15 @@ public class ClientContoller {
 		
 		this.clients.forEach(client -> {
 			if (gender.equals("0")) {
-				System.out.println(client);
+				if (services) {
+					System.out.println("\n.............................");
+					System.out.println("Nome: "+ client.name);
+					System.out.println("Id: " + client.id);
+					System.out.println(".............................\n");
+				} else {
+					System.out.println(client);
+				}
+				
 			} else if (gender.equalsIgnoreCase(client.gender)) {
 				System.out.println(client);
 			}
