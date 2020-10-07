@@ -13,6 +13,7 @@ public class Menu {
 		System.out.println("5 - Agendar serviço");
 		System.out.println("6 - Ver relatórios");
 		System.out.println("7 - Salvar arquivos");
+		System.out.println("8 - Ler arquivos");
 		System.out.println("0 - Voltar");
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 	}

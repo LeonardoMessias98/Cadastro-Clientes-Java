@@ -1,10 +1,11 @@
 package org.fatec;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Client {
+public class Client implements Serializable {
 	String name;
 	String phone;
 	String birthDay;

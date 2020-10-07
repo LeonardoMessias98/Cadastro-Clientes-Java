@@ -1,18 +1,21 @@
 package org.fatec;
 
+import java.util.*;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Admin implements Serializable {
 	
-	public void Run(int store, ServiceController service) throws IOException{
+	public void Run(int store, ServiceController service) throws IOException, ClassNotFoundException{
 		ClientContoller services = new ClientContoller();
 		ScannerController controle = new ScannerController();
 		
-		String path = "/home/messiasleonardo/teste.txt";
+		String path = "/home/messiasleonardo/agoravai.ser";
 
 		int escolha = 8;
 		
@@ -161,6 +164,16 @@ public class Admin implements Serializable {
 				escritor.writeObject(services.clients);
 				escritor.close();
 				System.out.println("Cadastros de clientes salvo com sucesso!");
+			}
+			
+			if (escolha == 8) {
+				FileInputStream canal = new FileInputStream(path);
+				ObjectInputStream leitor = new ObjectInputStream(canal);
+				// casting / cast -> casca
+				services.clients = (List<Client>) leitor.readObject();
+			
+				leitor.close();
+				System.out.println("Cadastros lidos com sucesso!");
 			}
 		}
 	}
