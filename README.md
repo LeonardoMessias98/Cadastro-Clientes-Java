@@ -1,4 +1,6 @@
-# Cadastro de clientes em Java
+# Programação Orientada a Objetos
+
+Repositório para a entrega das listas de POO 
 
 ## Lista 1 e Lista 2
 
