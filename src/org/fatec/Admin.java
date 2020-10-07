@@ -12,7 +12,7 @@ public class Admin implements Serializable {
 		ClientContoller services = new ClientContoller();
 		ScannerController controle = new ScannerController();
 		
-		String caminho = "teste.ser" ;
+		String path = "/home/messiasleonardo/teste.txt";
 
 		int escolha = 8;
 		
@@ -125,6 +125,19 @@ public class Admin implements Serializable {
 				
 				int escolhaRelatorio = controle.opcao();
 				
+				if (escolhaRelatorio == 1) {
+					System.out.println("Escolha dentre as 3 opções abaixo");
+					System.out.println("F - Feminina");
+					System.out.println("M - Masculino");
+					System.out.println("G - Geral");
+					
+					String escolhaGenero = controle.texto();
+					
+					int idadeMedia = services.getMiddleAge(escolhaGenero);
+					
+					System.out.println("A idade média dos clientes é " + idadeMedia + " anos.");
+				}
+				
 				if (escolhaRelatorio == 2) {
 					service.printMostUsed();
 				}
@@ -143,7 +156,7 @@ public class Admin implements Serializable {
 			}
 			
 			if (escolha == 7) {
-				FileOutputStream canal = new FileOutputStream(caminho);
+				FileOutputStream canal = new FileOutputStream(path);
 				ObjectOutputStream escritor = new ObjectOutputStream(canal);
 				escritor.writeObject(services.clients);
 				escritor.close();

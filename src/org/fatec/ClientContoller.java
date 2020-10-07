@@ -70,6 +70,30 @@ public class ClientContoller {
 		System.out.println("\nCliente atualizado com sucesso!");
 	}
 	
+	public int getMiddleAge(String gender) {
+		Iterator<Client> client = clients.iterator();
+		int somaIdade = 0;
+		int contador = 0;
+		
+		while (client.hasNext()){ 
+			   Client atual = client.next(); 
+			   if (gender.equalsIgnoreCase(atual.gender)) {
+				   contador++;
+				   
+				   somaIdade = somaIdade + (2020 - Integer.valueOf(atual.birthDay.split("/")[2]));	
+			   } else if (gender.equals("G")){
+				   contador++;
+				   
+				   somaIdade = somaIdade + (2020 - Integer.valueOf(atual.birthDay.split("/")[2]));	
+			   } else {
+				   System.out.println("Você escolheu errado");
+			   }
+		
+			}
+		
+		return somaIdade / contador;
+	}
+	
 	public void insertServices(String id, int service, ServiceController servico ) {
 		Iterator<Client> client = clients.iterator();
 		
